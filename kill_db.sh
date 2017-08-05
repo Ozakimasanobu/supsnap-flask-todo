@@ -1,2 +1,2 @@
 docker-compose rm -f
-docker volume rm supsnapflasktestapp_db -f
+docker volume rm supsnapflasktodo_db -f
