@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>flask todo</title>
+  </head>
+  <body>
+      <form class="form" action="/add" method="post">
+      <input type="text" name="title" value="">
+      <button type="submit" name="button">submit</button>
+    </form>
+    <table>
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>title</th>
+        </tr>
+      </thead>
+      <tbody>
+        <form class="" action="/delete" method="post">
+          {% for task in tasks %}
+            <tr>
+              <td>{{task.id}}</td>
+              <td>{{task.title}}</td>
+              <td><button type="submit" name="id" value="{{task.id}}">delete</button></td>
+            </tr>
+          {% endfor %}
+        </form>
+      </tbody>
+    </table>
+  </body>
+</html>
