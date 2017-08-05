@@ -29,4 +29,4 @@ def json():
     result = []
     for task in tasks.query.all():
         result.append({"id": task.id, "title": task.title})
-    return jsonify(ResultSet=result)
+    return jsonify(tasks=result)
