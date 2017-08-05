@@ -1,4 +1,4 @@
-from flask import Flask, request, flash, url_for, redirect, render_template
+from flask import Flask, request, flash, url_for, redirect, render_template, jsonify
 from app import app
 from db import db
 from models import tasks
@@ -23,3 +23,10 @@ def delete():
         db.session.delete(task)
         db.session.commit()
     return redirect("/")
+
+@app.route('/json')
+def json():
+    result = []
+    for task in tasks.query.all():
+        result.append({"id": task.id, "title": task.title})
+    return jsonify(ResultSet=result)
